@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zaizai.demo.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.zaizai.demo.entity.User">
+        <!--@mbg.generated-->
+        <!--@Table demo_tb_user-->
+        <id column="ID" jdbcType="VARCHAR" property="id"/>
+        <result column="USER_NAME" jdbcType="VARCHAR" property="userName"/>
+        <result column="USER_GENDER" jdbcType="VARCHAR" property="userGender"/>
+        <result column="NICKNAME" jdbcType="VARCHAR" property="nickname"/>
+        <result column="USER_EMAIL" jdbcType="VARCHAR" property="userEmail"/>
+        <result column="USER_PHONE" jdbcType="VARCHAR" property="userPhone"/>
+        <result column="PASSWORD" jdbcType="VARCHAR" property="password"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        ID, USER_NAME, USER_GENDER, NICKNAME, USER_EMAIL, USER_PHONE, `PASSWORD`
+    </sql>
+</mapper>
