@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @Date 2020/11/4 10:43
  */
 @Configuration
-//@EnableTransactionManagement
+@EnableTransactionManagement
 @MapperScan("com.zaizai.demo.mapper")
 public class MybatisPlusConfig {
 

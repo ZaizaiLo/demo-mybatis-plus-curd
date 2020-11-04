@@ -9,17 +9,19 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 @ApiModel(value = "用户信息实体")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Accessors(chain = true)
 @TableName(value = "demo_tb_user")
 public class User {
     /**
      * 编号
      */
-    @TableId(value = "ID", type = IdType.INPUT)
+    @TableId(value = "ID", type = IdType.UUID)
     @ApiModelProperty(value = "编号")
     private String id;
 
