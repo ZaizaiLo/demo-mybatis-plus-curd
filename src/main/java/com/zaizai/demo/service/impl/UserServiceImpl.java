@@ -14,6 +14,9 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * @Decription
  * @Author ZaiZai
@@ -40,5 +43,23 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             int insert = userMapper.insert(user);
             return insert > 0 ? ResultModel.success() : ResultModel.error("添加失败");
         }
+    }
+
+    @Override
+    public ResultModel<User> toLogin(Map<String, Object> map) {
+        try {
+            String psw = MD5Utils.inputPassToFormPass((String) map.get("userPsd"));
+            System.out.println(psw);
+            User user = userMapper.findUser((String) map.get("userMsg"), psw);
+            if (user != null) {
+                //登录成功，签发token，redis..
+                return ResultModel.success("登录成功", user);
+            } else {
+                return ResultModel.error("用户名/手机号码/邮箱或密码错误");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ResultModel.error("参数异常");
     }
 }
