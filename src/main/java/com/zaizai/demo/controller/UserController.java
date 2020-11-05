@@ -26,10 +26,6 @@ public class UserController {
 
     @RequestMapping("addUser")
     public ResultModel addUser(@Validated @RequestBody AddUserVo vo) {
-        User user = new User();
-        BeanUtils.copyProperties(vo, user);
-        user.setPassword(MD5Utils.inputPassToFormPass(vo.getPassword()));
-        boolean save = userService.save(user);
-        return save == true ? ResultModel.error("添加失败") : ResultModel.success();
+        return userService.addUser(vo);
     }
 }
