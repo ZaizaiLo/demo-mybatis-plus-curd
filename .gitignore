@@ -12,4 +12,4 @@
 *.iws
 *.iml
 *.ipr
-/libraries/
+/.idea/libraries/

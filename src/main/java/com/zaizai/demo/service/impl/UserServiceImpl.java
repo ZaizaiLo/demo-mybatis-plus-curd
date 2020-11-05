@@ -1,8 +1,6 @@
 package com.zaizai.demo.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zaizai.demo.common.ResultModel;
 import com.zaizai.demo.entity.User;
@@ -14,7 +12,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -49,7 +46,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     public ResultModel<User> toLogin(Map<String, Object> map) {
         try {
             String psw = MD5Utils.inputPassToFormPass((String) map.get("userPsd"));
-            System.out.println(psw);
+//            System.out.println(psw);
             User user = userMapper.findUser((String) map.get("userMsg"), psw);
             if (user != null) {
                 //登录成功，签发token，redis..
