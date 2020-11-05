@@ -12,6 +12,9 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 
+/**
+ * @author ZaiZai
+ */
 @ApiModel(value = "用户信息实体")
 @Data
 @AllArgsConstructor
