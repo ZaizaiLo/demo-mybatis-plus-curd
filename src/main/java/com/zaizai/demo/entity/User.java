@@ -12,6 +12,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * @author ZaiZai
  */
@@ -22,7 +24,9 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @TableName(value = "demo_tb_user")
 @ToString
-public class User {
+public class User implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     /**
      * 编号
      */
