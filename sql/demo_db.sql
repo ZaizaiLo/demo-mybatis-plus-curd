@@ -11,11 +11,27 @@
  Target Server Version : 50729
  File Encoding         : 65001
 
- Date: 05/11/2020 15:21:05
+ Date: 06/11/2020 16:41:30
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for demo_tb_role
+-- ----------------------------
+DROP TABLE IF EXISTS `demo_tb_role`;
+CREATE TABLE `demo_tb_role`  (
+  `ID` varchar(32) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '角色ID',
+  `NAME` varchar(32) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL COMMENT '角色名',
+  PRIMARY KEY (`ID`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of demo_tb_role
+-- ----------------------------
+INSERT INTO `demo_tb_role` VALUES ('1', 'ROLE_ADMIN');
+INSERT INTO `demo_tb_role` VALUES ('2', NULL);
 
 -- ----------------------------
 -- Table structure for demo_tb_user
@@ -35,6 +51,7 @@ CREATE TABLE `demo_tb_user`  (
 -- ----------------------------
 -- Records of demo_tb_user
 -- ----------------------------
+INSERT INTO `demo_tb_user` VALUES ('1', 'admin', NULL, NULL, NULL, NULL, '123456');
 INSERT INTO `demo_tb_user` VALUES ('169b09f44262405633e61a7317cafc45', '骆发友', '女', '乐龙以', '2b7m77i7@sina.com', '13200727532', 'd3b1294a61a07da9b49b6e22b2cbd7f9');
 INSERT INTO `demo_tb_user` VALUES ('49be5e518de6c29796a2433b709b41af', '劳彪星', '女', '倪超', 't7r7rz43n@googlemail.com', '13006357550', 'd3b1294a61a07da9b49b6e22b2cbd7f9');
 INSERT INTO `demo_tb_user` VALUES ('5cf4f230529d6fe786e0d94f94ee8226', '鱼冰', '女', '闵松保', '0033b73ys@263.net', '15806006026', 'd3b1294a61a07da9b49b6e22b2cbd7f9');
@@ -65,5 +82,23 @@ INSERT INTO `demo_tb_user` VALUES ('ecb37ac88d6dbdb31669727cf2aa0b43', '芮弘�
 INSERT INTO `demo_tb_user` VALUES ('ed93f1e04d41bee7f8c894dbbbd1a195', '扈洁燕', '女', '毕进', '3oi6pxk67@yahoo.com.cn', '15802725996', 'd3b1294a61a07da9b49b6e22b2cbd7f9');
 INSERT INTO `demo_tb_user` VALUES ('f032b5da82a889b22532a0ab7884ea02', '咎眉瑾', '女', '须仁', 'xjgsm@yahoo.com.cn', '15206282342', 'd3b1294a61a07da9b49b6e22b2cbd7f9');
 INSERT INTO `demo_tb_user` VALUES ('f7d40dbe462539528e24892b728058f0', '甫枝嘉', '女', '师伦浩', 'kayrjht@126.com', '15804656394', 'd3b1294a61a07da9b49b6e22b2cbd7f9');
+
+-- ----------------------------
+-- Table structure for demo_tb_user_role
+-- ----------------------------
+DROP TABLE IF EXISTS `demo_tb_user_role`;
+CREATE TABLE `demo_tb_user_role`  (
+  `ID` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `USER_ID` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `ROLE_ID` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  PRIMARY KEY (`ID`, `USER_ID`, `ROLE_ID`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of demo_tb_user_role
+-- ----------------------------
+INSERT INTO `demo_tb_user_role` VALUES ('1', '1', '1');
+INSERT INTO `demo_tb_user_role` VALUES ('2', '2', '2');
+INSERT INTO `demo_tb_user_role` VALUES ('3', '169b09f44262405633e61a7317cafc45', '1');
 
 SET FOREIGN_KEY_CHECKS = 1;
