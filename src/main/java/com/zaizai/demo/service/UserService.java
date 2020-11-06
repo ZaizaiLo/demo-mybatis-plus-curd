@@ -16,4 +16,8 @@ public interface UserService extends IService<User> {
     ResultModel<User> addUser(AddUserVo vo);
 
     ResultModel<User> toLogin(Map<String, Object> map);
+
+    User selectById(String id);
+
+    User selectByName(String name);
 }

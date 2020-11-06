@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zaizai.demo.mapper.UserRoleMapper">
+  <resultMap id="BaseResultMap" type="com.zaizai.demo.entity.UserRole">
+    <!--@mbg.generated-->
+    <!--@Table demo_tb_user_role-->
+    <id column="USER_ID" jdbcType="VARCHAR" property="userId" />
+    <id column="ROLE_ID" jdbcType="VARCHAR" property="roleId" />
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    USER_ID, ROLE_ID, ID
+  </sql>
+</mapper>

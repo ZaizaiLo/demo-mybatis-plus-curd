@@ -62,4 +62,14 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         }
         return ResultModel.error("参数异常");
     }
+
+    @Override
+    public User selectById(String id) {
+        return userMapper.selectById(id);
+    }
+
+    @Override
+    public User selectByName(String name) {
+        return userMapper.selectByName(name);
+    }
 }
