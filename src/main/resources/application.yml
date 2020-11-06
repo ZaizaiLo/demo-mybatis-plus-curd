@@ -4,6 +4,16 @@ spring:
     url: jdbc:mysql://localhost:3306/demo_db?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: root
     password: 123456
+
+  thymeleaf:
+    prefix: classpath:/static/
+    mode: HTML
+    cache: false
+    encoding: UTF-8
+    #     新版本不支持content-type: text/html，故新写法
+    servlet:
+      content-type: text/html
+
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**Mapper.xml
 server:

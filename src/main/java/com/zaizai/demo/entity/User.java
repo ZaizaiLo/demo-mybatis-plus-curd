@@ -11,8 +11,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.Accessors;
+import org.springframework.security.core.GrantedAuthority;
 
 import java.io.Serializable;
+import java.util.Collection;
 
 /**
  * @author ZaiZai
@@ -75,4 +77,7 @@ public class User implements Serializable {
     @TableField(value = "`PASSWORD`")
     @ApiModelProperty(value = "密码")
     private String password;
+
+
+
 }
