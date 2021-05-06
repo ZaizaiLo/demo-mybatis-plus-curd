@@ -4,6 +4,15 @@ spring:
     url: jdbc:mysql://localhost:3306/demo_db?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: root
     password: 123456
+  redis:
+    database: 1
+    #服务器地址
+    host: 127.0.0.1
+    port: 6379
+    timeout: 2000s
+    
+
+
 
 #  thymeleaf:
 #    prefix: classpath:/static/
