@@ -1,5 +1,6 @@
 package com.zaizai.demo.service.impl;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zaizai.demo.entity.Role;
 import com.zaizai.demo.entity.User;
 import com.zaizai.demo.entity.UserRole;
