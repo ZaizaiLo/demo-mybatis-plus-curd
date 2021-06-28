@@ -3,13 +3,14 @@ package com.zaizai.demo.controller;
 import com.alibaba.excel.EasyExcel;
 import com.zaizai.demo.common.ResultModel;
 import com.zaizai.demo.entity.ExportData;
+import com.zaizai.demo.entity.excel.ImportInfo;
+import com.zaizai.demo.service.FileService;
 import com.zaizai.demo.utils.RandomUtils;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -25,6 +26,9 @@ import java.util.List;
 @RestController
 @RequestMapping("file")
 public class FileController {
+
+    @Autowired
+    private FileService fileService;
 
 
     @PostMapping("upload")
@@ -51,7 +55,11 @@ public class FileController {
     }
 
 
-
+    @PostMapping(value = "readExcel")
+    public Object readExcel(@RequestParam(value = "multipartFile") MultipartFile excel) throws Exception {
+        log.info("调用成功");
+        return fileService.readExcel(excel, new ImportInfo());
+    }
 
 
 }
