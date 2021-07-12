@@ -61,5 +61,12 @@ public class FileController {
         return fileService.readExcel(excel, new ImportInfo());
     }
 
+    @PostMapping("sendData")
+    public List<Object> getData() {
+        List<Object> objects = fileService.sendData();
+        log.info("返回：{}", objects);
+        return objects;
+    }
+
 
 }

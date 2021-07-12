@@ -26,25 +26,15 @@ public class ExcelListener extends AnalysisEventListener {
      */
     @Override
     public void invoke(Object object, AnalysisContext context) {
-//        List<String> stringList = (List<String>) object;
-//        System.out.println("当前sheet" + context.getCurrentSheet().getSheetNo() + " 当前行：" + context.getCurrentRowNum()
-//                + " data:" + stringList.get(0));
-//        //数据存储到list，供批量处理，或后续自己业务逻辑处理
-//        data2.add(stringList);
-//        //根据自己业务做处理
-//        doSomething(stringList);
-        //数据存储到list，供批量处理，或后续自己业务逻辑处理。
-        //datas.add(object);
-        //根据业务自行 do something
-        //doSomething();
 
-        //如数据过大，可以进行定量分批处理
-        if (data.size() <= 1000) {
-            data.add(object);
-        } else {
+        data.add(object);
+//        //如数据过大，可以进行定量分批处理
+//        if (data.size() <= 1000) {
+//            data.add(object);
+//        } else {
 //            doSomething(null);
-            data = new ArrayList<Object>();
-        }
+//            data = new ArrayList<Object>();
+//        }
 
     }
 
@@ -52,6 +42,7 @@ public class ExcelListener extends AnalysisEventListener {
      * 根据业务自行实现该方法
      */
     private void doSomething(List<String> string) {
+
     }
 
     @Override

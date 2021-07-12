@@ -14,11 +14,17 @@ public class IDDemo {
 //        t1.run();
 //        t2.run();
 
-        for (int i = 1; i <= 100; i++) {
-            if (i % 2 == 0) continue;
-            System.out.println("第" + i + "次:");
-        }
+//        for (int i = 1; i <= 100; i++) {
+//            if (i % 2 == 0) continue;
+//            System.out.println("第" + i + "次:");
+
+        Car car = new BenzCar();
+        Car car1 = new ToyotaCar();
+        System.out.println(car.run("888"));
+        System.out.println(car1.run("999"));
+
     }
-
-
 }
+
+
+

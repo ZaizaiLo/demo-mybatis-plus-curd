@@ -3,6 +3,8 @@ package com.zaizai.demo.service;
 import com.zaizai.demo.entity.excel.ImportInfo;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 /**
  * @description
  * @author luojiyuan
@@ -10,4 +12,6 @@ import org.springframework.web.multipart.MultipartFile;
  */
 public interface FileService {
     Object readExcel(MultipartFile file, ImportInfo info) throws Exception;
+
+    List<Object> sendData();
 }
