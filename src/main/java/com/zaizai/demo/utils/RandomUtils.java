@@ -6,6 +6,8 @@ import org.apache.commons.lang3.time.DateUtils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Random;
 
@@ -406,6 +408,22 @@ public class RandomUtils {
         sb.append(numstr.charAt(random.nextInt(numstr.length())));
         //System.out.println(sb.toString());
         return sb.toString();
+    }
+
+
+    public static String createOrderNum(String channelNum) {
+        if (StringUtils.isBlank(channelNum)) {
+            return null;
+        }
+        StringBuilder builder = new StringBuilder();
+        builder.append("JF");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyMMddHHmmssSSS");
+        LocalDateTime localDate = LocalDateTime.now();
+        String time = localDate.format(formatter);
+        builder.append(time);
+        builder.append(channelNum);
+        builder.append(getNum(100, 999));
+        return builder.toString();
     }
 
 

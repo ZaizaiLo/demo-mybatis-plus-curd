@@ -1,5 +1,7 @@
 package com.zaizai.demo.exception;
 
+import java.util.Date;
+
 /**
  * @Decription
  * @Author ZaiZai
@@ -33,6 +35,7 @@ public class BizException extends RuntimeException {
         this.errorCode = errorInfoInterface.getResultCode();
         this.errorMsg = errorInfoInterface.getResultMsg();
     }
+
 
     public BizException(String errorMsg) {
         super(errorMsg);
